@@ -1,0 +1,13 @@
+#!/bin/bash -e
+
+if [[ "$l" == "-h" ]]; then
+    exec /usr/libexec/s2i/usage
+fi
+
+echo "---> Building and installing application from source..."
+
+mvn clean package
+
+if [ "$(ls -A ./target)" ]; then
+  mv ./target/demo-0.0.1-SNAPSHOT.jar ./demo.jar
+fi

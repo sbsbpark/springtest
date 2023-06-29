@@ -1,0 +1,5 @@
+#!/bin/bash -e
+cat <<EOF
+This is the demo S2I image:
+
+docker run -d -p 11080:11080 aicd_com_demo_svc
